@@ -2,7 +2,7 @@ import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import Modal from "./Modal";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { db } from "../config/firebase";
-import {toast} from "react-Toastify";
+import {toast} from "react-toastify";
 import * as Yup from "yup";
 
 
@@ -17,7 +17,15 @@ const AddandUpdateContact = ({ isOpen, onClose,isUpdate,contact }) => {
   const addContact = async (contact) => {
     try {
       const contactRef = collection(db, "contacts");
-      await addDoc(contactRef, contact);
+      if(!contactRef){
+        throw new Error('Something went wrong with contactRef')
+      }
+      // console.log(contactRef)
+      // console.log('contact collection ref fetched successfully')
+      // console.log(contact)
+      const addDocResult = await addDoc(contactRef, contact);
+      // console.log(addDocResult)
+      console.log('contact added into addDoc')
       onClose();
       toast.success("Contact Added Successfully");
     } catch (error) {
@@ -71,7 +79,7 @@ const AddandUpdateContact = ({ isOpen, onClose,isUpdate,contact }) => {
     <ErrorMessage name="email"/>
         </div>
         </div>
-        <button className="bg-orange px-3 py-1.5 border self-end">{isUpdate ? "update":"add"} Contact</button>
+        <button type="submit" className="bg-orange px-3 py-1.5 border self-end">{isUpdate ? "update":"add"} Contact</button>
       </Form>
     </Formik>
       </Modal>

@@ -5,7 +5,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "./config/firebase";
 
-import { ToastContainer, toast } from "react-Toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import ContactCard from "./components/ContactCard";
