@@ -4,8 +4,8 @@ import AddandUpdateContact from "./components/AddandUpdateContact";
 import { FaSearchengin, FaPlusCircle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import ContactCard from "./components/ContactCard";
-// import "react-toastify/dist/ReactToastify.css";
 import useDisclouse from "./hooks/useDisclouse";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import { db } from "./config/firebase";
 
