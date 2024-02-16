@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
-import { FaSearchengin } from "react-icons/fa";
-import { FaPlusCircle } from "react-icons/fa";
 import { collection, getDocs, onSnapshot } from "firebase/firestore";
+import AddandUpdateContact from "./components/AddandUpdateContact";
+import { FaSearchengin, FaPlusCircle } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import ContactCard from "./components/ContactCard";
+// import "react-toastify/dist/ReactToastify.css";
+import useDisclouse from "./hooks/useDisclouse";
+import Navbar from "./components/Navbar";
 import { db } from "./config/firebase";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-import ContactCard from "./components/ContactCard";
-import AddandUpdateContact from "./components/AddandUpdateContact";
-import useDisclouse from "./hooks/useDisclouse";
 
 const App = () => {
   const [contacts, setContacts] = useState([]);

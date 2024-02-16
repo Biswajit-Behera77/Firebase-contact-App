@@ -5,7 +5,7 @@ import {IoMdTrash} from "react-icons/io";
 import {db} from "../config/firebase";
 import AddandUpdateContact from "./AddandUpdateContact";
 import useDisclouse from "../hooks/useDisclouse";
-import {toast} from "react-Toastify";
+import {toast} from "react-toastify";
 
 
 
